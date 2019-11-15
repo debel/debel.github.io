@@ -1,0 +1,132 @@
+body {
+    font-family: monospace;
+    background-color: black;
+    color: white;
+  }
+
+table {
+  border-collapse: collapse;
+}
+
+td {
+  vertical-align: top;
+  padding-right: .7em;
+  padding-top: .7em;
+  padding-bottom: .7em;
+  border-bottom: 1px solid gray;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+a.item:hover {
+  background-color: #333;
+}
+
+a.item:active {
+  background-color: gray;
+}
+
+.colored {
+  color: #e7ad52;
+}
+
+.bolded {
+  font-weight: bold;
+}
+
+.larger {
+  font-size: 1.5em;
+}
+
+.centered {
+  text-align: center;
+}
+
+.margined {
+  margin: 0 auto;
+}
+
+.tabled {
+  display: inline-table;
+  width: 100%;
+}
+
+.w33 {
+  width: 33%
+}
+
+.w40 {
+  width: 40%;
+}
+
+.hello {
+  padding-top: 35px;
+  padding-left: 140px;
+}
+
+@media(width < 700px) {
+  .w40 {
+    width: 100%;
+  }
+
+  .avatar {
+    width: 25%;
+    margin-left: 30px;
+    margin-top: 30px;
+  }
+
+  .hello {
+    padding-top: 40px;
+    padding-left: 130px;
+  }
+}
+
+.w50 {
+  width: 50%;
+}
+
+.w75 {
+  width: 75%;
+}
+
+.handed {
+  cursor: pointer;
+}
+
+.avatar {
+  border-radius: 33%;
+  vertical-align: middle;
+  border: 0;
+  float: left;
+}
+
+.inlined {
+  display: inline;
+}
+
+.cleared {
+  clear:both;
+}
+
+
+
+.hello>h1 {
+  padding:0;
+  margin:0;
+}
+
+.hello>p {
+  padding:0;
+  margin:0;
+}
+
+.padded-top {
+  padding-top: 15px;
+}
+
+.padded-bottom {
+  padding-bottom: 15px;
+}
