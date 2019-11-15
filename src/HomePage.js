@@ -1,19 +1,44 @@
 import React from 'react';
 import './HomePage.css';
 
+const headerLinks = [
+  {
+    name: 'Github',
+    link: 'https://github.com/debel',
+    image: 'images/github.svg',
+  },
+  {
+    name: 'Twitter',
+    link: 'https://twitter.com/debelbot',
+    image: 'images/twitter.svg',
+  },
+  {
+    name: 'Board Game Geek',
+    link: 'https://boardgamegeek.com/collection/user/debelbot?gallery=large&sort=rating&sortdir=desc&rankobjecttype=subtype&rankobjectid=1&columns=title%7Cstatus%7Cversion%7Crating%7Cbggrating%7Cplays%7Ccomment%7Ccommands&geekranks=Board%20Game%20Rank&excludesubtype=boardgameexpansion&own=1&objecttype=thing&ff=1&subtype=boardgame',
+    image: 'images/bgg.svg',
+  },
+];
+
+const HeaderLinks = () => (
+  headerLinks.map(({ link, name, image }) => (
+    <a href={link} target="_blank"><img class="header-img" src={image} alt={name} /></a>
+  ))
+);
+
 const Header = () => (
   <header class="margined padded-top padded-bottom w40">
-    <img class="avatar" src="/mihail-mikov.jpg" />
+    <img class="avatar" src="images/mihail-mikov.jpg" alt="me" />
     <div class="hello">
       <h1>Hi, I'm Mihail</h1>
       <p>software engineer, juggler, board game geek</p>
+      <HeaderLinks />
     </div>
   </header>
 );
 
-const TableTitle = ({ text, onClick }) => (
+const TableTitle = ({ opened, text, onClick }) => (
   <tr class="handed" onClick={onClick}>
-    <td colspan="2" class="centered bolded larger">{text}</td>
+    <td colspan="2" class="centered bolded larger">{opened ? '➖' : '➕'}{text}</td>
   </tr>
 );
 
@@ -27,12 +52,12 @@ const TableItem = ({ name, link, description }) => (
 );
 
 const Table = ({ title, items }) => {
-  const [visible, setVisible] = React.useState(true);
-  const toggleVisibility = React.useCallback(() => setVisible(visible => !visible));
+  const [opened, setOpened] = React.useState(true);
+  const toggleVisibility = React.useCallback(() => setOpened(open => !open));
 
   return (<table class="margined w75 cleared">
-    <TableTitle text={title} onClick={toggleVisibility}/>
-    {visible && items.map(item => <TableItem {...item} />)}
+    <TableTitle opened={opened} text={title} onClick={toggleVisibility}/>
+    {opened && items.map(item => <TableItem {...item} />)}
   </table>);
 };
 
