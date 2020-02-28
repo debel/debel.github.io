@@ -24,6 +24,11 @@ export const presentations = [
     link: 'https://debel.github.io/git-panic-and-how-to-avoid-it/',
     description: 'A presentation about using git without stress, helpful command options, and best practises',
   },
+  {
+    name: 'Async Context in Javascript',
+    link: 'https://debel.github.io/async-context/#/',
+    description: 'A presentation about maintaining state across a "thread" of async function exections in JavaScript',
+  }
 ];
 
 export const courses = [
