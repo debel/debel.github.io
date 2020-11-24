@@ -28,6 +28,11 @@ export const presentations = [
     name: 'Async Context in Javascript',
     link: 'https://debel.github.io/async-context/#/',
     description: 'A presentation about maintaining state across a "thread" of async function exections in JavaScript',
+  },
+  {
+    name: 'Technical Interviews',
+    link: 'https://debel.github.io/technical-interviews/',
+    description: 'A presentation about different types of technical interviews, the importance of evidence-based interviewing, and common interviewing problems',
   }
 ];
 
