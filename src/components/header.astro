@@ -1,0 +1,38 @@
+---
+import me from '../assets/mihail-mikov.jpg';
+import github from '../assets/github.svg';
+import linkedin from '../assets/linkedin.svg';
+import bgg from '../assets/bgg.svg';
+import juggling from '../assets/juggling.svg';
+ 
+---
+
+<header class="px-4 py-6 mx-auto bg-gray-900 text-gray-300 drop-shadow-xl">
+  <div class="max-w-screen-md mx-auto flex flex-row items-center justify-center">
+    <img
+      class="my-6 rounded-lg mr-6"
+      src={me.src}
+      width="128"
+      height="128"
+      alt="the Fresh logo: a sliced lemon dripping with juice"
+    />
+    <div class="flex flex-col">
+      <h1 class="text-4xl font-bold">Hi, I'm Misho</h1>
+      <p>
+        software engineer | board game geek | juggler
+      </p>
+      <p class="flex flex-row space-x-2">
+        <a href="https://github.com/debel">
+          <img class="h-8 hover:scale-125" src={github.src} />
+        </a>
+        <a href="https://bg.linkedin.com/in/mihail-mikov-baa68a108">
+          <img class="h-8 hover:scale-125" src={linkedin.src} />
+        </a>
+        <a href="https://boardgamegeek.com/collection/user/debelbot?gallery=large&sort=rating&sortdir=desc&rankobjecttype=subtype&rankobjectid=1&columns=title%7Cstatus%7Cversion%7Crating%7Cbggrating%7Cplays%7Ccomment%7Ccommands&geekranks=Board%20Game%20Rank&excludesubtype=boardgameexpansion&own=1&objecttype=thing&ff=1&subtype=boardgame">
+          <img class="h-8 hover:scale-125" src={bgg.src} />
+        </a>
+        <img class="h-8 hover:scale-125" src={juggling.src} />
+      </p>
+    </div>
+  </div>
+</header>

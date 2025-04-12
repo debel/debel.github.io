@@ -1,0 +1,14 @@
+---
+import Section from './section.astro';
+import Presentation from './presentation.astro';
+
+import presentations from '../data/presentations.js';
+import courses from '../data/courses.js';
+---
+
+<Section title="Presentations">
+  {presentations.map(p => <Presentation {...p} />)}
+</Section>
+<Section title="Courses">
+  {courses.map(c => <Presentation {...c} />)}
+</Section>

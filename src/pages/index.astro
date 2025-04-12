@@ -1,0 +1,14 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Header from '../components/header.astro';
+import Aboutme from '../components/aboutme.astro';
+import Showcase from '../components/showcase.astro';
+---
+
+<Layout>
+	<Header />
+  <main class="flex flex-col items-center bg-gray-800 pt-12">
+    <Showcase />
+    <Aboutme />
+  </main>
+</Layout>

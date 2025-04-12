@@ -1,0 +1,17 @@
+---
+interface Props {
+  company: string;
+  timeline: string;
+  position: string;
+}
+
+const { company, timeline, position } = Astro.props;
+---
+<article class="m-2 border-l-2 pl-2 py-2 border-gray-400">
+  <div>
+    <span class="font-bold">{company}</span>
+    <span class="ml-2">({timeline})</span>
+  </div>
+  <div></div>
+  <div>{position}</div>
+</article>

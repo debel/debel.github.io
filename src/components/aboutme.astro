@@ -1,0 +1,36 @@
+---
+import Section from './section.astro';
+import Job from './job.astro';
+
+import jobs from '../data/jobs.js';
+---
+
+<Section title="About me">
+  <article>
+    <p class="p-2 italic">
+      a software engineer with a graying beard; a proud father and husband; a sci-fi addict
+    </p>
+    <p class="p-2 italic">
+      I enjoy all aspects of programming and computer science. I'm always interested in learning new things, exploring cool tech and working with amazing people. 
+    </p>
+  </article>
+  <article>
+    <h3 class="text-xl pl-2 bg-gray-700 mb-2">Interesets</h3>
+    <div class="grid lg:grid-cols-3 grid-cols-2 ml-2">
+      <ul>
+        <li>Distributed systems</li>
+        <li>Language design</li>
+        <li>Teaching & mentoring</li>
+      </ul>
+      <ul>
+        <li>Board game design</li>
+        <li>Theatre directing & acting</li>
+        <li>Hiking & juggling</li>
+      </ul>
+    </div>
+  </article>
+  <article>
+    <h3 class="text-xl pl-2 bg-gray-700 mt-2">Job history</h3>
+    {jobs.map(j => <Job {...j} />)}
+  </article>
+</Section>
