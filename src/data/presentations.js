@@ -54,6 +54,7 @@ export default [
   {
     "title": "Overview of Technical Interviews",
     "slides": "https://debel.github.io/technical-interviews/",
+    "video": "https://www.youtube.com/watch?v=XJzkpcXCJio",
     "description":
       "A presentation about different types of technical interviews, the importance of evidence-based interviewing, and common interviewing problems",
   },
