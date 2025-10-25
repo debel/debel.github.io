@@ -1,8 +1,15 @@
 ---
+
+export type Props = {
+  title: string;
+}
+
 const { title } = Astro.props;
+
+const sectionId = title.toLowerCase().replaceAll(' ', '-');
 ---
 
-<section class="w-auto lg:w-3/4 flex flex-col bg-gray-900 text-gray-300 rounded-md p-4 my-4">
+<section id={sectionId} class="w-auto lg:w-3/4 flex flex-col bg-gray-900 text-gray-300 rounded-md p-4 my-4">
   <h2 class="p-2 text-2xl rounded-t-md border-gray-400">
     <span>{title}</span>
   </h2>

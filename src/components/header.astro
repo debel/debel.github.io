@@ -4,7 +4,9 @@ import github from '../assets/github.svg';
 import linkedin from '../assets/linkedin.svg';
 import bgg from '../assets/bgg.svg';
 import juggling from '../assets/juggling.svg';
+import theatre from '../assets/theatre.svg';
 
+const menuLinkStyles = "before:pr-1 after:pl-1 before:content-['['] after:content-[']'] hover:before:content-[']'] hover:after:content-['[']";
 ---
 
 <header class="px-4 py-6 mx-auto bg-gray-900 text-gray-300 drop-shadow-xl">
@@ -31,8 +33,20 @@ import juggling from '../assets/juggling.svg';
         <a href="https://boardgamegeek.com/collection/user/debelbot?gallery=large&sort=rating&sortdir=desc&rankobjecttype=subtype&rankobjectid=1&columns=title%7Cstatus%7Cversion%7Crating%7Cbggrating%7Cplays%7Ccomment%7Ccommands&geekranks=Board%20Game%20Rank&excludesubtype=boardgameexpansion&own=1&objecttype=thing&ff=1&subtype=boardgame">
           <img class="h-8 hover:scale-125" src={bgg.src} />
         </a>
-        <img class="h-8 hover:scale-125" src={juggling.src} />
+        <a>
+          <img class="h-8 hover:scale-125" src={juggling.src} />
+        </a>
+        <a>
+          <img class="h-8 hover:scale-125" src={theatre.src} />
+        </a>
       </p>
     </div>
   </div>
+  <!-- <menu> -->
+  <!--   <ul class="flex flex-col items-center pt-4 space-y-2 lg:flex-row lg:justify-center lg:space-x-6 lg:pt-0 lg:space-y-0"> -->
+  <!--     <li><a class={menuLinkStyles} href="#presentations">Presentations</a></li> -->
+  <!--     <li><a class={menuLinkStyles} href="#courses">Courses</a></li> -->
+  <!--     <li><a class={menuLinkStyles} href="#about-me">About me</a></li> -->
+  <!--   </ul> -->
+  <!-- </menu> -->
 </header>
