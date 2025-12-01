@@ -1,5 +1,12 @@
 export default [
   {
+    "title": "The evolution of the JavaScript toolchain",
+    "slides":
+      "https://debel.github.io/js-toolchain-evolution/",
+    "description":
+      "A presentation about the JavaScript toolchain - from jsmin to vite - a walk down memory lane of how the web tooling has changed over time",
+  },
+  {
     "title": "Concurrency Parallelism and Scheduling in JavaScript",
     "slides":
       "https://debel.github.io/concurrency-parallelism-and-scheduling-js/#/",

@@ -6,7 +6,7 @@ export default [
   },
   {
     company: "American University in Bulgaria",
-    timeline: "2018-2022",
+    timeline: "2018-ongoing",
     position: "Adjunct Assistant Professor (Computer Science)",
   },
   {
