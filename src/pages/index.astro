@@ -1,14 +1,62 @@
 ---
 import Layout from '../layouts/Layout.astro';
-import Header from '../components/header.astro';
 import Aboutme from '../components/aboutme.astro';
-import Showcase from '../components/showcase.astro';
+import List from '../components/list.astro';
+
+import presentations from '../data/presentations.js';
+import courses from '../data/courses.js';
 ---
 
 <Layout>
-	<Header />
-  <main class="flex flex-col items-center bg-gray-800 pt-6 lg:pt-12">
-    <Showcase />
-    <Aboutme />
+  <style>
+    .scroll-snap-section {
+      scroll-snap-align: start;
+      height: 100vh;
+      width: 100vw;
+    }
+  </style>
+
+  <main class="flex flex-col overflow-y-auto lg:snap-y lg:snap-always mt-8">
+    <section id="about-me" class="flex flex-col items-center px-6 pt-12 mt-4 bg-gray-800 lg:scroll-snap-section">
+      <div class="w-screen pt-16 lg:max-w-6xl">
+        <Aboutme />
+      </div>
+    </section>
+
+    <section id="presentations" class="flex flex-col items-center px-6 pt-12 bg-gray-800 lg:scroll-snap-section">
+      <div class="w-screen lg:max-w-6xl">
+        <List title="Presentations" list={presentations}/>
+      </div>
+    </section>
+
+    <section id="courses" class="flex flex-col items-center px-6 pt-12 bg-gray-800 lg:scroll-snap-section">
+      <div class="w-screen lg:max-w-6xl">
+        <List title="Courses" list={courses} />
+      </div>
+    </section>
+ 
+    <section id="blank" class="lg:h-screen lg:w-screen flex flex-col items-center px-6 lg:pt-12 bg-gray-800 lg:scroll-snap-section">
+      <div class="w-screen h-8 lg:max-w-6xl">
+      </div>
+    </section>
   </main>
+ 
+  <script>
+    const header = document.getElementById('site-header');
+    const main = document.querySelector('main');
+ 
+    if (header && main) {
+      const handleScroll = () => {
+        const mainRect = main.getBoundingClientRect();
+        if (mainRect.top < 0) {
+          header.classList.add('header-scrolled');
+        } else {
+          header.classList.remove('header-scrolled');
+        }
+      };
+
+      main.addEventListener('scroll', handleScroll);
+      handleScroll(); // Initial check
+    }
+  </script>
 </Layout>

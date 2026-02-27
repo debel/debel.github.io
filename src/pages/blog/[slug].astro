@@ -1,0 +1,60 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import { getCollection } from 'astro:content';
+
+export async function getStaticPaths() {
+  const posts = await getCollection('blog');
+  return posts.map((p: any) => ({
+    params: { slug: p.slug },
+  }));
+}
+
+const { slug } = Astro.params;
+const posts = await getCollection('blog');
+const post = posts.find((p: any) => p.slug === slug);
+
+if (!post) {
+  throw new Error('Not found');
+}
+
+const rendered = await post.render();
+
+---
+
+<Layout>
+  <main class="flex flex-col items-center bg-gray-800 pt-6 lg:pt-12 w-screen mt-34 lg:mt-20">
+    <article class="w-full lg:max-w-6xl bg-gray-900 xl:rounded-lg p-6 md:p-8 shadow-xl xl:border border-gray-700">
+      <header class="mb-6">
+        <div class="flex flex-wrap items-center gap-4 mb-4">
+          <h1 class="text-3xl md:text-4xl font-bold text-gray-100">
+            {post.data.title}
+          </h1>
+        </div>
+        <div class="flex flex-wrap items-center gap-4 text-sm text-gray-400 border-y border-gray-700 py-3">
+          <time datetime={post.data.date.toISOString()}>
+            {new Date(post.data.date).toLocaleDateString('en-US', {
+              year: 'numeric',
+              month: 'long',
+              day: 'numeric',
+              weekday: 'long'
+            })}
+          </time>
+          {post.data.tags && post.data.tags.length > 0 && (
+            <div class="flex gap-2">
+              {post.data.tags.map((tag: string) => (
+                <span class="bg-gray-800 px-2 py-1 rounded">
+                  #{tag}
+                </span>
+              ))}
+            </div>
+          )}
+        </div>
+      </header>
+
+      <div class="prose prose-invert max-w-none text-gray-200 leading-loose space-y-4">
+        <rendered.Content />
+      </div>
+    </article>
+  </main>
+</Layout>
+

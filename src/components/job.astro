@@ -7,11 +7,12 @@ interface Props {
 
 const { company, timeline, position } = Astro.props;
 ---
-<article class="m-2 border-l-2 pl-2 py-2 border-gray-400">
-  <div>
-    <span class="font-bold">{company}</span>
-    <span class="ml-2">({timeline})</span>
+<article class="m-2 border-l-4 pl-4 py-3 border-gray-500">
+  <div class="flex flex-row md:items-center md:justify-between">
+    <span class="font-bold text-lg text-gray-200">{company}</span>
+    <span class="ml-2 text-sm text-gray-400 items-center px-1 py-1 rounded">({timeline})</span>
   </div>
-  <div></div>
-  <div>{position}</div>
+  <div class="mt-1">
+    <span class="text-gray-300">{position}</span>
+  </div>
 </article>

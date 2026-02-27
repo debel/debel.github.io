@@ -1,1 +1,42 @@
 @import "tailwindcss";
+
+/* Link styles */
+a {
+  transition: color 0.2s ease-in-out;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+  text-underline-offset: 4px;
+}
+
+/* Scroll snap container styles - body level */
+html {
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  height: 100vh;
+  width: 100vw;
+}
+
+/* Main scroll container */
+main {
+  scroll-snap-type: y mandatory;
+  overflow-y: scroll;
+  height: 100vh;
+  width: 100vw;
+  scroll-behavior: smooth;
+}
+
+/* Section styles - full viewport */
+.scroll-snap-section {
+  scroll-snap-align: start;
+  height: 100vh;
+  width: 100vw;
+}

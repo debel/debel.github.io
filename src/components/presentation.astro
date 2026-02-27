@@ -11,21 +11,26 @@ interface Props {
 const { title, slides, video, description } = Astro.props;
 ---
 
-<article class="grid grid-cols-4 lg:grid-cols-7align-middle space-x-4 m-2 border-l-2 px-2 py-2 border-gray-400 hover:border-gray-800 hover:bg-gray-800 hover:rounded-md">
-  <p class="flex font-extrabold col-span-3 items-center">
-    <span class="align-middle">{title}</span>
-  </p>
-  <p class="flex items-center justify-end flex-row space-x-4">
-    <a href={slides} target="_blank">
-      <img class="h-8 hover:scale-125" src={slidesSvg.src} />
+<article class={`flex flex-col md:flex-row items-start md:items-center 
+space-x-4 md:space-x-6 px-4 py-3 border-l-4 border-gray-600 
+transition-all duration-300 ease-in-out w-full
+hover:border-gray-400 hover:bg-gray-800/80 hover:shadow-xl hover:shadow-black`}>
+  <p class="flex items-center space-x-4 flex-shrink-0 pb-2 md:pb-0">
+    <a href={slides} target="_blank" class="hover:shadow-2xl hover:shadow-white transition-opacity">
+      <img class="h-8" src={slidesSvg.src} />
     </a>
     {video && (
-      <a href={video} target="_blank">
-      <img class="h-8 hover:scale-125" src={videoSvg.src} />
+      <a href={video} target="_blank" class="hover:shadow-2xl hover:shadow-white transition-opacity">
+      <img class="h-8" src={videoSvg.src} />
       </a>
     )}
   </p>
-  <p class="flex col-span-4 items-center pt-2 lg:pt-0">
-    {description}
-  </p>
+  <div class="flex-1 min-w-0 flex flex-col">
+    <p class="font-bold text-gray-200 mb-2">
+      {title}
+    </p>
+    <p class="text-gray-400 text-sm md:text-base text-justify">
+      {description}
+    </p>
+  </div>
 </article>

@@ -1,0 +1,14 @@
+---
+import Section from './section.astro';
+import Presentation from './presentation.astro';
+
+const { title, list } = Astro.props;
+---
+
+<div class="space-y-8">
+  <Section title={title}>
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+      {list.map(p => <Presentation {...p} />)}
+    </div>
+  </Section>
+</div>
